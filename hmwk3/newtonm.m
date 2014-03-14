@@ -1,10 +1,12 @@
-function [ p ] = newtonm(f, fp, po, N, TOL )
+function [ pn ] = newtonm(f, fp, po, N, TOL )
   
+    pn=[];
     i=1;
     while(i<N)
-        p = po - f(po)/fp(po)
-        i
-        f(p)
+        p = po - f(po)/fp(po);
+        pn = [pn p];
+        i;
+        f(p);
         
         if(abs(p-po) < TOL)
             disp('Found root');
